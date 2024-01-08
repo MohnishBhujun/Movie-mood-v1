@@ -1,4 +1,14 @@
-/* .button {
+body { 
+    background-color: #808080;
+    margin: 15 px;
+    font-family: sans-serif;
+}
+
+#mood-button {
+    border-radius: 5px;
+}
+
+.button {
     display: inline-block;
     padding: 15px 25px;
     font-size: 24px;
@@ -19,4 +29,7 @@
     background-color: #8257f6;
     box-shadow: 0 5px #686868;
     transform: translateY(4px);
-} */
+}
+
+
+
