@@ -20,3 +20,8 @@
     box-shadow: 0 5px #686868;
     transform: translateY(4px);
 } */
+body {
+    background-color: #808080;
+    margin: 15 px;
+    font-family: sans-serif;
+}
