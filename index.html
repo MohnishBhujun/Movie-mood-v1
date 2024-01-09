@@ -10,36 +10,34 @@
 
 <body>
     <header class="title">Movie Mood</header>
+
     
-    <section id="selection-bar">
-        <!-- This is where all movie selection criteria go. -->
-        <div id="movie-options">
-            <select name="mood" id="mood">
-                <option value="happy">Happy</option>
-                <option value="bored">Bored</option>
-                <option value="scared">Scared</option>
-                <option value="sad">Sad</option>
-                <option value="funny">Funny</option>
-                <option value="adventurous">Adventurous</option>
-            </select>
-            <select name="rating" id="rating">
-                <option value="rating-1">Rating1</option>
-                <option value="rating-2">Rating2</option>
-                <option value="rating-3">Rating3</option>
-                <option value="rating-4">Rating4</option>
-            </select>
-            <select name="year" id="year">
-                <option value="year-1">Year1</option>
-                <option value="year-1">Year2</option>
-                <option value="year-1">Year3</option>
-                <option value="year-1">Year4</option>
-                <option value="year-1">Year5</option>
-                <option value="year-1">Year6</option>
-                <option value="year-1">Year7</option>
-            </select>
-            <button class="button" id="submit">Submit</button>
-        </div>
-    </section>
+<section id="selection-bar">
+    <!-- This is where all movie selection criteria go. -->
+    <div id="movie-options">
+        <select name="mood" id="mood">
+            <option value="happy">Happy</option>
+            <option value="bored">Bored</option>
+            <option value="scared">Scared</option>
+            <option value="sad">Sad</option>
+            <option value="funny">Funny</option>
+            <option value="adventurous">Adventurous</option>
+        </select>
+        <select name="rating" id="rating">
+            <option value="rating-1">Rating1</option>
+            <option value="rating-2">Rating2</option>
+            <option value="rating-3">Rating3</option>
+            <option value="rating-4">Rating4</option>
+        </select>
+
+    <form onsubmit="submitForm(event)">
+        <label for="integerInput">Enter an Year:</label>
+        <input type="number" id="integerInput" required>
+        <button type="submit">Submit</button>
+      </form>
+    <button class="RANDOMISE" onclick="randomise()">RANDOMISE!</button>
+    <button class="RUN1" onclick="runItAgain()">RUN IT AGAIN!</button>
+    <button class="Luck" onclick="feelingLucky()">FEELING LUCKY, PUNK!</button>
     <!-- Script source declarations -->
     <script src="assets/js/main.js"></script>
     <script
