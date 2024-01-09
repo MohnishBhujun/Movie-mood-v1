@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="style.css">
     <title>Movie Mood</title>
 </head>
 
@@ -13,31 +13,38 @@
 <div class=“text”>
   <h1>Movie Mood</h1>
 </div>
-  <header class="title">Movie Mood</header>
-  <div class="relative inline-block text-left">
-      <div>
-          <button type="button" id="mood-button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" aria-expanded="true" aria-haspopup="true">
-              Mood
-              <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-              </svg>
-          </button>
-      </div>
+  
+<header class="title">Movie Mood</header>
 
-      <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="mood-button" tabindex="-1">
-          <div class="py-1" role="none">
-              <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Happy</a>
-              <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Bored</a>
-              <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Scared</a>
-              <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Sad</a>
-              <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-4">Sillygoose</a>
-              <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-5">Adventurous</a>
-              <form method="POST" action="#" role="none">
-                  <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm" role="menuitem" tabindex="-1" id="menu-item-6">Sign out</button>
-              </form>
-          </div>
-      </div>
-  </div>
+    
+<section id="selection-bar">
+    <!-- This is where all movie selection criteria go. -->
+    <div id="movie-options">
+        <select name="mood" id="mood">
+            <option value="happy">Happy</option>
+            <option value="bored">Bored</option>
+            <option value="scared">Scared</option>
+            <option value="sad">Sad</option>
+            <option value="funny">Funny</option>
+            <option value="adventurous">Adventurous</option>
+        </select>
+        <select name="rating" id="rating">
+            <option value="rating-1">Rating1</option>
+            <option value="rating-2">Rating2</option>
+            <option value="rating-3">Rating3</option>
+            <option value="rating-4">Rating4</option>
+        </select>
+
+    <form onsubmit="submitForm(event)">
+        <label for="integerInput">Enter an Year:</label>
+        <input type="number" id="integerInput" required>
+        <button type="submit">Submit</button>
+      </form>
+    <button class="RANDOMISE" onclick="randomise()">RANDOMISE!</button>
+    <button class="RUN1" onclick="runItAgain()">RUN IT AGAIN!</button>
+    <button class="Luck" onclick="feelingLucky()">FEELING LUCKY, PUNK!</button>
+
+
 </body>
 
 </html>
