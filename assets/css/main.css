@@ -67,32 +67,4 @@ h1 {
     box-shadow: 0 30px 40px -15px rgba(0,0,0,0.3)
 }
 
-.modal {
-    display: flex;
-    width: 20;
-    height: 50%;
-    align-items: top;
-}
 
-/* media queries */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-    .container {
-        width: 90%;
-        margin: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 12px;
-    }
-    .container {
-        width: 100%;
-    }
-    .menu {
-        display: none;
-    }
-}
