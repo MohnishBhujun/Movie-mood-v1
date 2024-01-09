@@ -5,6 +5,7 @@ body {
     overflow: hidden;
     font-family: 'Courier New', Courier, monospace, sans-serif;
 }
+
 /* header styling */
 .top {
     position: relative;
@@ -56,17 +57,15 @@ h1 {
 }
 
 /* card styles */
-
 /* shadow */
 .shadow-2x1 { 
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease-in-out;
 }
-
+/* hover */
 .shadow-2x1:hover {
     box-shadow: 0 30px 40px -15px rgba(0,0,0,0.3)
 }
-
 
 .modal {
     display: flex;
