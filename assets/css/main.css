@@ -40,39 +40,5 @@ body {
     transform: translateY(4px);
 }
 
-header {
-    font-size: 30px;
-    text-align: center;
-    font-weight: bold;
-    color: #686868;
-}
 
-.modal {
-    display: flex;
-    width: 20;
-    height: 50%;
-    align-items: top;
-}
 
-/* media queries */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-    .container {
-        width: 90%;
-        margin: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 12px;
-    }
-    .container {
-        width: 100%;
-    }
-    .menu {
-        display: none;
-    }
-}
