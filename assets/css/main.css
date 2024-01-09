@@ -6,10 +6,26 @@ body {
     font-family: 'Courier New', Courier, monospace, sans-serif;
 }
 
+/* header styling */
 .top {
     position: relative;
     height: 10px;
     background: linear-gradient(141deg, cyan 0%, rebeccapurple 40%, deeppink 90%)
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    color: white;
+    font-size: 4vw;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 /* button styles */ 
@@ -40,5 +56,15 @@ body {
     transform: translateY(4px);
 }
 
+/* card styles */
+/* shadow */
+.shadow-2x1 { 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
+}
+/* hover */
+.shadow-2x1:hover {
+    box-shadow: 0 30px 40px -15px rgba(0,0,0,0.3)
+}
 
 
