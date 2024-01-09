@@ -12,6 +12,21 @@ body {
     background: linear-gradient(141deg, cyan 0%, rebeccapurple 40%, deeppink 90%)
 }
 
+h1 {
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    color: white;
+    font-size: 4vw;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 /* button styles */ 
 #mood-button {
     border-radius: 5px;
@@ -38,13 +53,6 @@ body {
     background-color: #8257f6;
     box-shadow: 0 5px #686868;
     transform: translateY(4px);
-}
-
-header {
-    font-size: 30px;
-    text-align: center;
-    font-weight: bold;
-    color: #686868;
 }
 
 .modal {
