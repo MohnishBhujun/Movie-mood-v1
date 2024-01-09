@@ -14,29 +14,26 @@
   <h1>Movie Mood</h1>
 </div>
   
-    <title class="dropdown1">Choose a mood</title>
-    <h2>Select a mood:</h2>
-    <select>
-        <option value="option1">Happy</option>
-        <option value="option2">Sad</option>
-        <option value="option3">Nostalgic</option>
-    </select>
+<header class="title">Movie Mood</header>
 
-    <title class="dropdown2">Choose a genre</title>
-    <h3>Select an genre:</h3>
-    <select>
-        <option value="option1">Sillygoose</option>
-        <option value="option2">Horror</option>
-        <option value="option3">Action</option>
-    </select>
-
-    <title class="dropdown2">Choose a genre</title>
-    <h3>Select an genre:</h3>
-    <select>
-        <option value="option1">Sillygoose</option>
-        <option value="option2">Horror</option>
-        <option value="option3">Action</option>
-    </select>
+    
+<section id="selection-bar">
+    <!-- This is where all movie selection criteria go. -->
+    <div id="movie-options">
+        <select name="mood" id="mood">
+            <option value="happy">Happy</option>
+            <option value="bored">Bored</option>
+            <option value="scared">Scared</option>
+            <option value="sad">Sad</option>
+            <option value="funny">Funny</option>
+            <option value="adventurous">Adventurous</option>
+        </select>
+        <select name="rating" id="rating">
+            <option value="rating-1">Rating1</option>
+            <option value="rating-2">Rating2</option>
+            <option value="rating-3">Rating3</option>
+            <option value="rating-4">Rating4</option>
+        </select>
 
     <form onsubmit="submitForm(event)">
         <label for="integerInput">Enter an Year:</label>
