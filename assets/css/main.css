@@ -32,7 +32,7 @@ h1 {
 /* Random */ 
 .RANDOMISE {
     display: inline-block;
-    padding: 30px 25px;
+    padding: 10px 25px;
     font-size: 24px;
     cursor: pointer;
     text-align: center;
@@ -58,7 +58,7 @@ h1 {
 /* Run Button */
 .RUN1 {
     display: inline-block;
-    padding: 30px 25px;
+    padding: 10px 25px;
     font-size: 24px;
     cursor: pointer;
     text-align: center;
@@ -84,7 +84,7 @@ h1 {
 /* Feeling Lucky, Punk? */
 .Luck {
     display: inline-block;
-    padding: 30px 25px;
+    padding: 10px 25px;
     font-size: 24px;
     cursor: pointer;
     text-align: center;
