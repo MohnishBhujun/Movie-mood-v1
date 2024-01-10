@@ -28,6 +28,23 @@ h1 {
     height: 100vh;
 }
 
+/* Container */
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(207, 140, 31, 0.662);
+    padding: 50px;
+}
+
+/* Inner container */
+.content-container {
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 9px #686868;
+}
+
 /* button styles */
 /* Random */ 
 .RANDOMISE {
