@@ -21,19 +21,19 @@ h1 {
     text-transform: uppercase;
 }
 
-.text {
+/* .text {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
+} */
 
 /* Container */
 .content-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 30vh;
     background-color: rgba(207, 140, 31, 0.662);
     padding: 50px;
 }
