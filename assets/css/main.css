@@ -1,5 +1,5 @@
 body { 
-    background-color: #3c7160;
+    background-color: #050000e3;
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -27,7 +27,7 @@ h1 {
     justify-content: center;
     align-items: center;
     height: 30vh;
-    background-color: #f6e997;
+    background-color: #e1dcbb;
     padding: 50px;
 }
 
@@ -35,7 +35,7 @@ h1 {
 .content-container {
     border-radius: 15px;
     padding: 40px;
-    box-shadow: 0 9px #cbd07c;
+    box-shadow: 0 9px #4d4e46;
 }
 
 /* button styles */
@@ -56,7 +56,7 @@ h1 {
 }
   
 .RANDOMISE:hover {
-    background-color: #d8354d
+    background-color: #ce1531
 }
   
 .RANDOMISE:active {
@@ -82,7 +82,7 @@ h1 {
 }
   
 .RUN1:hover {
-    background-color: #d8354d
+    background-color: #ce1531
 }
   
 .RUN1:active {
@@ -108,7 +108,7 @@ h1 {
 }
 
 .Luck:hover {
-    background-color: #d8354d
+    background-color: #ce1531
 }
   
 .Luck:active {
