@@ -1,5 +1,5 @@
 body { 
-    background-color: #050000e3;
+    background-color: #050000e5;
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -52,7 +52,7 @@ h1 {
     background-color: #d85368; /* add fade colour? */
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #3c7160;
+    box-shadow: 0 9px #306957;
 }
   
 .RANDOMISE:hover {
@@ -78,7 +78,7 @@ h1 {
     background-color: #d85368; /* add fade colour? */
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #3c7160;
+    box-shadow: 0 9px #306957;;
 }
   
 .RUN1:hover {
@@ -104,7 +104,7 @@ h1 {
     background-color: #d85368; /* add fade colour? */
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #3c7160;
+    box-shadow: 0 9px #306957;;
 }
 
 .Luck:hover {
