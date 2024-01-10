@@ -1,5 +1,5 @@
 body { 
-    background-color: #222;
+    background-color: #3c7160;
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -27,7 +27,7 @@ h1 {
     justify-content: center;
     align-items: center;
     height: 30vh;
-    background-color: rgba(207, 140, 31, 0.662);
+    background-color: #f6e997;
     padding: 50px;
 }
 
@@ -35,7 +35,7 @@ h1 {
 .content-container {
     border-radius: 15px;
     padding: 40px;
-    box-shadow: 0 9px #686868;
+    box-shadow: 0 9px #cbd07c;
 }
 
 /* button styles */
@@ -49,19 +49,19 @@ h1 {
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #3f0ccd; /* add fade colour? */
+    background-color: #d85368; /* add fade colour? */
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #686868;
+    box-shadow: 0 9px #3c7160;
 }
   
 .RANDOMISE:hover {
-    background-color: #6435e4
+    background-color: #d8354d
 }
   
 .RANDOMISE:active {
-    background-color: #8257f6;
-    box-shadow: 0 5px #686868;
+    background-color: #d51330;
+    box-shadow: 0 5px #235445;
     transform: translateY(4px);
 }
 
@@ -75,19 +75,19 @@ h1 {
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #3f0ccd; /* add fade colour? */
+    background-color: #d85368; /* add fade colour? */
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #686868;
+    box-shadow: 0 9px #3c7160;
 }
   
 .RUN1:hover {
-    background-color: #6435e4
+    background-color: #d8354d
 }
   
 .RUN1:active {
-    background-color: #8257f6;
-    box-shadow: 0 5px #686868;
+    background-color: #d51330;
+    box-shadow: 0 5px #235445;
     transform: translateY(4px);
 }
 
@@ -101,19 +101,19 @@ h1 {
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #3f0ccd; /* add fade colour? */
+    background-color: #d85368; /* add fade colour? */
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #686868;
+    box-shadow: 0 9px #3c7160;
 }
 
 .Luck:hover {
-    background-color: #6435e4
+    background-color: #d8354d
 }
   
 .Luck:active {
-    background-color: #8257f6;
-    box-shadow: 0 5px #686868;
+    background-color: #d51330;
+    box-shadow: 0 5px #3c7160;
     transform: translateY(4px);
 }
 
