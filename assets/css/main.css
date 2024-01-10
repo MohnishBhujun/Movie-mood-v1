@@ -21,13 +21,6 @@ h1 {
     text-transform: uppercase;
 }
 
-/* .text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-} */
-
 /* Container */
 .content-container {
     display: flex;

@@ -1,0 +1,22 @@
+/* .button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #3f0ccd;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #686868;
+}
+  
+.button:hover {background-color: #6435e4}
+  
+.button:active {
+    background-color: #8257f6;
+    box-shadow: 0 5px #686868;
+    transform: translateY(4px);
+} */
