@@ -40,7 +40,7 @@ h1 {
 
 /* button styles */
 /* Random */ 
-.RANDOMISE {
+.randomise {
     display: inline-block;
     padding: 10px 25px;
     font-size: 24px;
@@ -55,18 +55,18 @@ h1 {
     box-shadow: 0 9px #306957;
 }
   
-.RANDOMISE:hover {
+.randomise:hover {
     background-color: #ce1531
 }
   
-.RANDOMISE:active {
+.randomise:active {
     background-color: #d51330;
     box-shadow: 0 5px #235445;
     transform: translateY(4px);
 }
 
 /* Run Button */
-.RUN1 {
+.run-it-again {
     display: inline-block;
     padding: 10px 25px;
     font-size: 24px;
@@ -81,18 +81,18 @@ h1 {
     box-shadow: 0 9px #306957;;
 }
   
-.RUN1:hover {
+.run-it-again:hover {
     background-color: #ce1531
 }
   
-.RUN1:active {
+.run-it-again:active {
     background-color: #d51330;
     box-shadow: 0 5px #235445;
     transform: translateY(4px);
 }
 
 /* Feeling Lucky, Punk? */
-.Luck {
+.feeling-lucky {
     display: inline-block;
     padding: 10px 25px;
     font-size: 24px;
@@ -107,11 +107,11 @@ h1 {
     box-shadow: 0 9px #306957;;
 }
 
-.Luck:hover {
+.feeling-lucky:hover {
     background-color: #ce1531
 }
   
-.Luck:active {
+.feeling-lucky:active {
     background-color: #d51330;
     box-shadow: 0 5px #3c7160;
     transform: translateY(4px);
