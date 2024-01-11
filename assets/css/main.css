@@ -31,16 +31,83 @@ h1 {
     padding: 50px;
 }
 
-/* Inner container */
-.content-container {
+/* button styles */
+.randomise,
+.run-it-again,
+.feeling-lucky {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #d85368;
+    border: none;
     border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 9px #4d4e46;
+    box-shadow: 0 9px #306957;
+}
+
+.randomise:hover,
+.run-it-again:hover,
+.feeling-lucky:hover {
+    background-color: #ce1531;
+}
+
+.randomise:active,
+.run-it-again:active,
+.feeling-lucky:active {
+    background-color: #d51330;
+    box-shadow: 0 5px #235445;
+    transform: translateY(4px);
+}
+
+/* card styles */
+/* shadow */
+.shadow-2x1 { 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* hover */
+.shadow-2x1:hover {
+    box-shadow: 0 30px 40px -15px rgba(0,0,0,0.3)
+}
+
+.modal {
+    display: flex;
+    width: 20;
+    height: 50%;
+    align-items: top;
+}
+
+/* media queries */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    .container {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+    .container {
+        width: 100%;
+    }
+    .menu {
+        display: none;
+    }
 }
 
 /* button styles */
 /* Random */ 
-.RANDOMISE {
+.randomise {
     display: inline-block;
     padding: 10px 25px;
     font-size: 24px;
@@ -55,18 +122,18 @@ h1 {
     box-shadow: 0 9px #306957;
 }
   
-.RANDOMISE:hover {
+.randomise:hover {
     background-color: #ce1531
 }
   
-.RANDOMISE:active {
+.randomise:active {
     background-color: #d51330;
     box-shadow: 0 5px #235445;
     transform: translateY(4px);
 }
 
 /* Run Button */
-.RUN1 {
+.run-it-again {
     display: inline-block;
     padding: 10px 25px;
     font-size: 24px;
@@ -81,18 +148,18 @@ h1 {
     box-shadow: 0 9px #306957;;
 }
   
-.RUN1:hover {
+.run-it-again:hover {
     background-color: #ce1531
 }
   
-.RUN1:active {
+.run-it-again:active {
     background-color: #d51330;
     box-shadow: 0 5px #235445;
     transform: translateY(4px);
 }
 
 /* Feeling Lucky, Punk? */
-.Luck {
+.feeling-lucky {
     display: inline-block;
     padding: 10px 25px;
     font-size: 24px;
@@ -107,11 +174,11 @@ h1 {
     box-shadow: 0 9px #306957;;
 }
 
-.Luck:hover {
+.feeling-lucky:hover {
     background-color: #ce1531
 }
   
-.Luck:active {
+.feeling-lucky:active {
     background-color: #d51330;
     box-shadow: 0 5px #3c7160;
     transform: translateY(4px);

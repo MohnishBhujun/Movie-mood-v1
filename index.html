@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets\css\main.css">
+    <link rel="stylesheet" href="assets\css\main.css" />
     <title>Movie Mood</title>
-</head>
+  </head>
 
-<body>
-    <body>
-    <div class="top"></div>
-<div class="text">
-  <h1>Movie Mood</h1>
-</div>
+  <body>
+    <header>
+      <div class="top"></div>
+      <h1>Movie Mood</h1>
+    </header>
 
-    <!-- <header class="title">Movie Mood</header> -->
-
-<div class="content-container">    
-
-<section id="selection-bar">
-    <!-- This is where all movie selection criteria go. -->
-    <div id="movie-options">
-        <select name="mood" id="mood">
+    <div class="content-container">
+      <section id="selection-bar">
+        <!-- This is where all movie selection criteria go. -->
+        <div id="movie-options">
+          <select name="mood" id="mood">
             <option value="happy">Happy</option>
             <option value="bored">Bored</option>
             <option value="scared">Scared</option>
             <option value="sad">Sad</option>
             <option value="funny">Funny</option>
             <option value="adventurous">Adventurous</option>
-        </select>
-        <select name="rating" id="rating">
+          </select>
+          <select name="rating" id="rating">
             <option value="rating-1">Rating1</option>
             <option value="rating-2">Rating2</option>
             <option value="rating-3">Rating3</option>
             <option value="rating-4">Rating4</option>
-        </select>
+          </select>
 
-        <form>
+          <form>
             <label for="startYear">Start Year:</label>
-            <input type="number" id="startYear" name="startYear" required>
-            
+            <input type="number" id="startYear" name="startYear" required />
+
             <label for="endYear">End Year:</label>
-            <input type="number" id="endYear" name="endYear" required>
-            
-            <button type="submit">Submit</button>
+            <input type="number" id="endYear" name="endYear" required />
+
           </form>
-    <button class="RANDOMISE" onclick="randomise()">RANDOMISE!</button>
-    <button class="RUN1" onclick="runItAgain()">RUN IT AGAIN!</button>
-    <button class="Luck" onclick="feelingLucky()">FEELING LUCKY, PUNK!</button>
-    <!-- Script source declarations -->
-    <script src="assets/js/main.js"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-  crossorigin="anonymous"></script>
-</div>
-</div>
-</body>
+          <button class="randomise">RANDOMISE!</button>
+          <button class="run-it-again">RUN IT AGAIN!</button>
+          <button class="feeling-lucky">FEELING LUCKY, PUNK!</button>
+        </div>
+      </section>
+
+      <!-- Script source declarations -->
+      <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"
+      ></script>
+      <script src="assets/js/main.js"></script>
+    </div>
+  </body>
 </html>
