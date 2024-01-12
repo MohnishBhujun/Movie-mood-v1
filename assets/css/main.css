@@ -32,9 +32,9 @@ h1 {
 }
 
 /* button styles */
-.randomise,
+.submit,
 .run-it-again,
-.feeling-lucky {
+.rewind {
     display: inline-block;
     padding: 10px 25px;
     font-size: 24px;
@@ -49,15 +49,15 @@ h1 {
     box-shadow: 0 9px #306957;
 }
 
-.randomise:hover,
+.submit:hover,
 .run-it-again:hover,
-.feeling-lucky:hover {
+.rewind:hover {
     background-color: #ce1531;
 }
 
-.randomise:active,
+.submit:active,
 .run-it-again:active,
-.feeling-lucky:active {
+.rewind:active {
     background-color: #d51330;
     box-shadow: 0 5px #235445;
     transform: translateY(4px);
