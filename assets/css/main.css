@@ -30,9 +30,11 @@ h1 {
     align-items: center;
     background-color: #e1dcbb;
     padding: 20px;
-    margin: 20px;
+    margin: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 /* button styles */
