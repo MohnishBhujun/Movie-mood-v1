@@ -32,7 +32,7 @@ h1 {
 
 /* button styles */
 .submit,
-.run-it-again,
+.randomise,
 .rewind {
     display: inline-block;
     padding: 10px 25px;
@@ -49,13 +49,13 @@ h1 {
 }
 
 .submit:hover,
-.run-it-again:hover,
+.randomise:hover,
 .rewind:hover {
     background-color: #ce1531;
 }
 
 .submit:active,
-.run-it-again:active,
+.randomise:active,
 .rewind:active {
     background-color: #d51330;
     box-shadow: 0 5px #235445;
