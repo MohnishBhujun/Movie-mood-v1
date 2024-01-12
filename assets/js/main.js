@@ -55,52 +55,48 @@ const moodsToGenres = {
 function createSearchParameters() {
   // Get the mood from the mood dropdown
   const mood = $("#mood").val();
+  // Get the genre array from the mood object
+  const genreArray = moodsToGenres[mood];
+  // Join the genre array into a string
+  const genreString = genreArray.join("%2C");
   // Get rating range from the rating dropdown
   const rating = $("#rating").val();
+  // Split rating into an array
+  const ratingArray = rating.split("-");
+  // Get the minimum rating
+  const minRating = ratingArray[0];
+  // Get the maximum rating
+  const maxRating = ratingArray[1];
   // Get start year and end year from text boxes
   const startYear = $("#startYear").val();
   const endYear = $("#endYear").val();
 
-  // Debug zone
-  console.log(mood, rating, startYear, endYear);
+  var criteriaArray = [genreString, minRating, maxRating, startYear, endYear];
+  // console.log(criteriaArray);
+
+  return criteriaArray;
 }
 
-// Settings for the AJAX call
-var settings = {
-  async: true,
-  crossDomain: true,
-  // URL for the AJAX call, url is set by the 
-  url: "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=53%7C36%7C878",
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWVhMzIzZGI3NjUwOGE3MWQ5OTMxNDg0NzdhZDM2ZiIsInN1YiI6IjY1OTc1OGY4ZWY5ZDcyMWQyZTEyYjVlZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zyau9BDNn_4vkghL57r3ZBpL5ovsUC3SMb7KJKKb3wc",
-  },
-};
+// Function to create the AJAX call
+function ajaxCall(criterias) {
+  const settings = {
+    async: true,
+    crossDomain: true,
+    url: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&release_date.gte=${criterias[3]}&release_date.lte=${criterias[4]}&sort_by=popularity.desc&vote_average.gte=${criterias[1]}&vote_average.lte=${criterias[2]}&with_genres=${criterias[0]}`,
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWVhMzIzZGI3NjUwOGE3MWQ5OTMxNDg0NzdhZDM2ZiIsInN1YiI6IjY1OTc1OGY4ZWY5ZDcyMWQyZTEyYjVlZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zyau9BDNn_4vkghL57r3ZBpL5ovsUC3SMb7KJKKb3wc",
+    },
+  };
 
-// On click function for the submit button
-$(".randomise").on("click", function () {
-    $.ajax(settings).done(function (response) {
-        // Get movies from response
-        const movies = response.results;
-        // Get random movie from movies array
-        const randomMovie = movies[Math.floor(Math.random() * movies.length)];
-        // Get movie title
-        const movieTitle = randomMovie.title;
-        // Get movie overview
-        const movieOverview = randomMovie.overview;
-        // Get movie poster
-        const moviePoster = randomMovie.poster_path;
-        // Get movie release date
-        const movieReleaseDate = randomMovie.release_date;
-        // Get movie genre
-        const movieGenre = randomMovie.genre_ids;
-        console.log(movieTitle, movieOverview, moviePoster, movieReleaseDate, movieGenre);
-    });
-});
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+}
 
-// Global debug zone
-$(".feeling-lucky").on("click", function () {
-    createSearchParameters();
+$(".submit").on("click", function () {
+  var criterias = createSearchParameters();
+  ajaxCall(criterias);
 });
