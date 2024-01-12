@@ -1,4 +1,4 @@
-body {
+  body {
     background-color: #050000e5;
     padding: 0;
     margin: 0;
@@ -13,7 +13,18 @@ body {
     background: linear-gradient(141deg, cyan 0%, rebeccapurple 40%, deeppink 90%);
   }
   
-  h1 {
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .logo-container img {
+    width: 200px;
+    height: 100px;
+  } */
+
+  img {
     font-family: 'Courier New', Courier, monospace, sans-serif;
     color: white;
     font-size: 4vw;
@@ -50,7 +61,7 @@ body {
     gap: 10px;
   }
   
-  .submit {
+ .submit {
     margin-top: 10px;
   }
   
@@ -123,6 +134,10 @@ body {
       width: 90%;
       margin: auto;
     }
+    .content-container {
+        margin: 10px;
+        max-height: 70vh;
+    }
   }
   
   @media (max-width: 480px) {
@@ -134,5 +149,13 @@ body {
     }
     .menu {
       display: none;
+    }
+    .content-container {
+        margin: 5px;
+        max-height: 60vh;
+    }
+    .logo-container img {
+        width: 100px;
+        height: 50px;
     }
   }
