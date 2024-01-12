@@ -19,11 +19,6 @@
     align-items: center;
   }
 
-  /* .logo-container img {
-    width: 200px;
-    height: 100px;
-  } */
-
   img {
     font-family: 'Courier New', Courier, monospace, sans-serif;
     color: white;
@@ -43,7 +38,7 @@
     padding: 20px;
     margin: 40px;
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 9px #306957;
     max-height: 80vh;
     overflow-y: auto;
   }
