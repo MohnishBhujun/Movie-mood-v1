@@ -26,9 +26,8 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30vh;
     background-color: #e1dcbb;
-    padding: 50px;
+    padding: 20px;
 }
 
 /* button styles */
@@ -77,8 +76,8 @@ h1 {
 
 .modal {
     display: flex;
-    width: 20;
-    height: 50%;
+    width: 100%;
+    height: auto;
     align-items: top;
 }
 
