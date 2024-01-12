@@ -30,6 +30,9 @@ h1 {
     align-items: center;
     background-color: #e1dcbb;
     padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* button styles */
@@ -93,13 +96,6 @@ h1 {
 /* hover */
 .shadow-2x1:hover {
     box-shadow: 0 30px 40px -15px rgba(0,0,0,0.3)
-}
-
-.modal {
-    display: flex;
-    width: 20;
-    height: 50%;
-    align-items: top;
 }
 
 /* media queries */
