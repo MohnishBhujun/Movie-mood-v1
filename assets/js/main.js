@@ -77,6 +77,25 @@ function createSearchParameters() {
   return criteriaArray;
 }
 
+// Function to create the movie cards
+function getRandomMovies(responseData) {
+  // Pick 6 random movies from the response data
+  var randomMovies = [];
+  for (var i = 0; i < 6; i++) {
+    var randomIndex = Math.floor(Math.random() * responseData.length);
+    randomMovies.push(responseData[randomIndex]);
+  }
+
+  console.log(randomMovies);
+  return randomMovies;
+}
+
+// Function to display the movie cards
+function displayMovieCards(randomMovies) {
+  
+  }
+}
+
 // Function to create the AJAX call
 function ajaxCall(criterias) {
   const settings = {
@@ -92,11 +111,13 @@ function ajaxCall(criterias) {
   };
 
   $.ajax(settings).done(function (response) {
-    console.log(response);
+    return getRandomMovies(response.results);
   });
 }
 
-$(".submit").on("click", function () {
+$(".submit").on("click", function (event) {
+  event.preventDefault();
   var criterias = createSearchParameters();
-  ajaxCall(criterias);
+  randomMovies = ajaxCall(criterias);
+  displayMovieCards(randomMovies);
 });
