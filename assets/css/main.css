@@ -45,19 +45,29 @@
   
   #movie-options {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap; /* Added flex-wrap property */
   }
   
   form {
     display: flex;
     gap: 10px;
+    align-items: center; /* Added align-items property */
   }
   
- .submit {
+  .submit {
     margin-top: 10px;
+    height: 40px;
+    flex: 1; /* Added flex property */
+  }
+  
+  .center-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap; /* Added flex-wrap property */
   }
   
   /* button styles */

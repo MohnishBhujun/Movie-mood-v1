@@ -94,7 +94,6 @@ function getRandomMovies(responseData) {
 function displayMovieCards(randomMovies) {
   
   }
-}
 
 // Function to create the AJAX call
 function ajaxCall(criterias) {
