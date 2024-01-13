@@ -1,40 +1,69 @@
-body { 
+  body {
     background-color: #050000e5;
     padding: 0;
     margin: 0;
     overflow: hidden;
     font-family: 'Courier New', Courier, monospace, sans-serif;
-}
-
-/* header styling */
-.top {
+  }
+  
+  /* header styling */
+  .top {
     position: relative;
     height: 10px;
-    background: linear-gradient(141deg, cyan 0%, rebeccapurple 40%, deeppink 90%)
-}
+    background: linear-gradient(141deg, cyan 0%, rebeccapurple 40%, deeppink 90%);
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-h1 {
+  img {
     font-family: 'Courier New', Courier, monospace, sans-serif;
     color: white;
     font-size: 4vw;
     font-weight: 300;
     text-transform: uppercase;
-}
-
-/* Container */
-.content-container {
+    text-align: center;
+    margin: 0;
+  }
+  
+  /* Container */
+  .content-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e1dcbb;
+    padding: 20px;
+    margin: 40px;
+    border-radius: 15px;
+    box-shadow: 0 9px #306957;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  #movie-options {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 30vh;
-    background-color: #e1dcbb;
-    padding: 50px;
-}
-
-/* button styles */
-.randomise,
-.run-it-again,
-.feeling-lucky {
+    gap: 10px;
+  }
+  
+  form {
+    display: flex;
+    gap: 10px;
+  }
+  
+ .submit {
+    margin-top: 10px;
+  }
+  
+  /* button styles */
+  .submit,
+  .randomise,
+  .rewind {
     display: inline-block;
     padding: 10px 25px;
     font-size: 24px;
@@ -47,159 +76,81 @@ h1 {
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #306957;
-}
-
-.randomise:hover,
-.run-it-again:hover,
-.feeling-lucky:hover {
+  }
+  
+  .submit:hover,
+  .randomise:hover,
+  .rewind:hover {
     background-color: #ce1531;
-}
-
-.randomise:active,
-.run-it-again:active,
-.feeling-lucky:active {
+  }
+  
+  .submit:active,
+  .randomise:active,
+  .rewind:active {
     background-color: #d51330;
     box-shadow: 0 5px #235445;
     transform: translateY(4px);
-}
-
-/* card styles */
-/* shadow */
-.shadow-2x1 { 
+  }
+  
+  /* card styles */
+  /* shadow */
+  .shadow-2x1 {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease-in-out;
-}
-
-/* hover */
-.shadow-2x1:hover {
-    box-shadow: 0 30px 40px -15px rgba(0,0,0,0.3)
-}
-
-.modal {
+  }
+  
+  /* hover */
+  .shadow-2x1:hover {
+    box-shadow: 0 30px 40px -15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal {
     display: flex;
-    width: 20;
-    height: 50%;
+    width: 100%;
+    height: auto;
     align-items: top;
-}
-
-/* button styles */
-/* Random */ 
-.randomise {
-    display: inline-block;
-    padding: 10px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #d85368; /* add fade colour? */
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #306957;
-}
+  }
   
-.randomise:hover {
-    background-color: #ce1531
-}
-  
-.randomise:active {
-    background-color: #d51330;
-    box-shadow: 0 5px #235445;
-    transform: translateY(4px);
-}
-
-/* Run Button */
-.run-it-again {
-    display: inline-block;
-    padding: 10px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #d85368; /* add fade colour? */
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #306957;;
-}
-  
-.run-it-again:hover {
-    background-color: #ce1531
-}
-  
-.run-it-again:active {
-    background-color: #d51330;
-    box-shadow: 0 5px #235445;
-    transform: translateY(4px);
-}
-
-/* Feeling Lucky, Punk? */
-.feeling-lucky {
-    display: inline-block;
-    padding: 10px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #d85368; /* add fade colour? */
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #306957;;
-}
-
-.feeling-lucky:hover {
-    background-color: #ce1531
-}
-  
-.feeling-lucky:active {
-    background-color: #d51330;
-    box-shadow: 0 5px #3c7160;
-    transform: translateY(4px);
-}
-
-/* card styles */
-/* shadow */
-.shadow-2x1 { 
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-/* hover */
-.shadow-2x1:hover {
-    box-shadow: 0 30px 40px -15px rgba(0,0,0,0.3)
-}
-
-.modal {
+  /* footer styles */
+  footer {
     display: flex;
-    width: 20;
-    height: 50%;
-    align-items: top;
-}
-
-/* media queries */
-@media (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
+    background-color: #e1dcbb;
+    padding: 20px;
+  }
+  
+  /* media queries */
+  @media (max-width: 768px) {
     body {
-        font-size: 14px;
+      font-size: 14px;
     }
     .container {
-        width: 90%;
-        margin: auto;
+      width: 90%;
+      margin: auto;
     }
-}
-@media (max-width: 480px) {
+    .content-container {
+        margin: 10px;
+        max-height: 70vh;
+    }
+  }
+  
+  @media (max-width: 480px) {
     body {
-        font-size: 12px;
+      font-size: 12px;
     }
     .container {
-        width: 100%;
+      width: 100%;
     }
     .menu {
-        display: none;
+      display: none;
     }
-}
-
-
+    .content-container {
+        margin: 5px;
+        max-height: 60vh;
+    }
+    .logo-container img {
+        width: 100px;
+        height: 50px;
+    }
+  }
