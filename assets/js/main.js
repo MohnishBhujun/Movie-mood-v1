@@ -79,14 +79,19 @@ function createSearchParameters() {
 
 // Function to create the movie cards
 function getRandomMovies(responseData) {
-  // Pick 6 random movies from the response data
   var randomMovies = [];
-  for (var i = 0; i < 6; i++) {
+  var movieIndices = [];
+
+  while (randomMovies.length < 6) {
     var randomIndex = Math.floor(Math.random() * responseData.length);
-    randomMovies.push(responseData[randomIndex]);
+    
+    // Check if the movie index has already been added
+    if (!movieIndices.includes(randomIndex)) {
+      randomMovies.push(responseData[randomIndex]);
+      movieIndices.push(randomIndex);
+    }
   }
 
-  // console.log(randomMovies);
   return randomMovies;
 }
 
