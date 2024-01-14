@@ -58,7 +58,7 @@ function createSearchParameters() {
   // Get the genre array from the mood object
   const genreArray = moodsToGenres[mood];
   // Join the genre array into a string
-  const genreString = genreArray.join("%2C");
+  const genreString = genreArray.join("%7C");
   // Get rating range from the rating dropdown
   const rating = $("#rating").val();
   // Split rating into an array
@@ -86,14 +86,14 @@ function getRandomMovies(responseData) {
     randomMovies.push(responseData[randomIndex]);
   }
 
-  console.log(randomMovies);
+  // console.log(randomMovies);
   return randomMovies;
 }
 
 // Function to display the movie cards
 function displayMovieCards(randomMovies) {
-  
-  }
+  console.log(randomMovies);
+}
 
 // Function to create the AJAX call
 function ajaxCall(criterias) {
@@ -110,13 +110,13 @@ function ajaxCall(criterias) {
   };
 
   $.ajax(settings).done(function (response) {
-    return getRandomMovies(response.results);
+    let randomMovies = getRandomMovies(response.results);
+    displayMovieCards(randomMovies);
   });
 }
 
 $(".submit").on("click", function (event) {
   event.preventDefault();
   var criterias = createSearchParameters();
-  randomMovies = ajaxCall(criterias);
-  displayMovieCards(randomMovies);
+  ajaxCall(criterias);
 });
