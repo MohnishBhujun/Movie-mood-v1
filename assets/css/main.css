@@ -219,12 +219,4 @@
     }
 
   }
-
-  footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #e1dcbb;
-    padding: 20px;
-  }
   
