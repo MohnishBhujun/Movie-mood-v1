@@ -58,7 +58,7 @@ function createSearchParameters() {
   // Get the genre array from the mood object
   const genreArray = moodsToGenres[mood];
   // Join the genre array into a string
-  const genreString = genreArray.join("%2C");
+  const genreString = genreArray.join("%7C");
   // Get rating range from the rating dropdown
   const rating = $("#rating").val();
   // Split rating into an array
@@ -86,21 +86,36 @@ function getRandomMovies(responseData) {
     randomMovies.push(responseData[randomIndex]);
   }
 
-  console.log(randomMovies);
+  // console.log(randomMovies);
   return randomMovies;
 }
 
 // Function to display the movie cards
 function displayMovieCards(randomMovies) {
-  
-  }
+  $('.movie-container').empty();
+  randomMovies.forEach(function(movie) {
+    var movieCard = $('<div>').addClass('relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md');
+    var movieImageContainer = $('<div>').addClass('relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg');
+    var movieImage = $('<img>').attr('src', 'https://image.tmdb.org/t/p/w500' + movie.poster_path).attr('alt', 'movie-poster');
+    var movieInfoContainer = $('<div>').addClass('p-6 text-center');
+    var movieTitle = $('<h4>').addClass('mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased').text(movie.title);
+    var movieYear = $('<p>').addClass('block bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-text font-sans text-base font-medium leading-relaxed text-transparent antialiased').text(movie.release_date.substring(0, 4));
+
+    movieImageContainer.append(movieImage);
+    movieInfoContainer.append(movieTitle, movieYear);
+    movieCard.append(movieImageContainer, movieInfoContainer);
+
+    // Append the movie card to a container element on your page
+    $('.movie-container').append(movieCard);
+  });
+}
 
 // Function to create the AJAX call
 function ajaxCall(criterias) {
   const settings = {
     async: true,
     crossDomain: true,
-    url: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&release_date.gte=${criterias[3]}&release_date.lte=${criterias[4]}&sort_by=popularity.desc&vote_average.gte=${criterias[1]}&vote_average.lte=${criterias[2]}&with_genres=${criterias[0]}`,
+    url: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&release_date.gte=${criterias[3]}&release_date.lte=${criterias[4]}&sort_by=vote_average.desc&vote_average.gte=${criterias[1]}&vote_average.lte=${criterias[2]}&with_genres=${criterias[0]}`,
     method: "GET",
     headers: {
       accept: "application/json",
@@ -110,13 +125,13 @@ function ajaxCall(criterias) {
   };
 
   $.ajax(settings).done(function (response) {
-    return getRandomMovies(response.results);
+    let randomMovies = getRandomMovies(response.results);
+    displayMovieCards(randomMovies);
   });
 }
 
 $(".submit").on("click", function (event) {
   event.preventDefault();
   var criterias = createSearchParameters();
-  randomMovies = ajaxCall(criterias);
-  displayMovieCards(randomMovies);
+  ajaxCall(criterias);
 });

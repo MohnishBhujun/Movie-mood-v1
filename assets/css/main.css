@@ -2,7 +2,7 @@
     background-color: #050000e5;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: 'Courier New', Courier, monospace, sans-serif;
   }
   
@@ -173,6 +173,20 @@
     align-items: center;
     background-color: #e1dcbb;
     padding: 20px;
+  }
+
+  /* movie card styles */
+  .movie-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #e1dcbb;
+    padding: 20px;
+    margin: 40px;
+    border-radius: 15px;
+    box-shadow: 0 9px #306957;
+    max-height: 80vh;
+    overflow-y: auto;
   }
   
   /* media queries */
