@@ -234,3 +234,12 @@
 
   }
   
+  #quoteBox {
+    margin-left: 10px;
+    flex: 1; /* Added flex property */
+  }
+  
+  #quoteButton {
+    /* Existing styles */
+    margin-left: 10px; /* Added margin-left property */
+  }
