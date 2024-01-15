@@ -152,10 +152,10 @@ function displayMovieCards(randomMovies) {
 // Function to make AJAX call
 function getMovies(random) {
   // Create search parameters
-  if (random = true) {
-    var searchParameters = createRandomSearchParameters();
-  } else {
+  if (random != "random") {
     var searchParameters = createSearchParameters();
+  } else {
+    var searchParameters = createRandomSearchParameters();
   }
 
   // Create the query URL
@@ -195,14 +195,14 @@ function getMovies(random) {
 $(".submit").on("click", function (event) {
   event.preventDefault();
   console.log("Clicked");
-  getMovies(false);
+  getMovies();
 });
 
 // Event listener for the random button
 $(".randomise").on("click", function (event) {
   event.preventDefault();
   console.log("Clicked");
-  getMovies(true);
+  getMovies("random");
 });
 
 $(document).ready(function () {
