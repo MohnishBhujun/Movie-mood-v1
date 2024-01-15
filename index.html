@@ -72,7 +72,7 @@
             >
               <!-- <label for="rating">Rating:</label>
             <select name="rating" id="rating"> -->
-              <option value="" disabled selected>Rating</option>
+              <option value="NaN" disabled selected>Rating</option>
               <option value="0-25">0-25</option>
               <option value="26-50">26-50</option>
               <option value="51-75">51-75</option>
@@ -122,15 +122,8 @@
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <div class="movie-details">
-          <div class="poster-container">
-            <img id="modalPoster" src="" alt="Movie Poster" class="poster">
-          </div>
-          <div class="movie-info">
-            <h2 id="modalTitle"></h2>
-            <p id="modalContent"></p>
-          </div>
-        </div>
+        <h2 id="modalTitle"></h2>
+        <p id="modalContent"></p>
       </div>
     </div>
 
