@@ -131,20 +131,19 @@ function getRandomMovies(responseData) {
 // Function to display the movie cards
 function displayMovieCards(randomMovies) {
   $('.movie-container').empty();
-  randomMovies.forEach(function(movie) {
-    var movieCard = $('<div>').addClass('relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md movie-card');
+
+  randomMovies.forEach(function (movie) {
+    var movieCard = $('<div>').addClass('relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md movie-card').data("movie-id", movie.id);
     var movieImageContainer = $('<div>').addClass('relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg');
     var movieImage = $('<img>').attr('src', 'https://image.tmdb.org/t/p/w500' + movie.poster_path).attr('alt', 'movie-poster');
     var movieInfoContainer = $('<div>').addClass('p-6 text-center');
-    var movieTitle = $('<h4>').addClass('mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased').text(movie.title);
-    var movieYear = $('<p>').addClass('block bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-text font-sans text-base font-medium leading-relaxed text-transparent antialiased').text(movie.release_date.substring(0, 4));
-    var movieCard = $('<div>').addClass('relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md movie-card');
+    var movieTitle = $('<h4>').addClass('mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased movie-title').text(movie.title);
+    var movieYear = $('<p>').addClass('block bg-gradient-to-r from-pink-600 to-pink-400 bg-clip-text font-sans text-base font-medium leading-relaxed text-transparent antialiased movie-year').text(movie.release_date.substring(0, 4));
 
     movieImageContainer.append(movieImage);
     movieInfoContainer.append(movieTitle, movieYear);
     movieCard.append(movieImageContainer, movieInfoContainer);
 
-    // Append the movie card to a container element on your page
     $('.movie-container').append(movieCard);
   });
 }
@@ -211,31 +210,46 @@ $(".rewind").on("click", function (event) {
 });
 
 $(document).ready(function () {
-  // Get the modal element
+  //Getting the modal element
   var modal = $("#myModal");
 
-  // Get the <span> element that closes the modal
+  //Getting the <span> element that closes the modal
   var span = $(".close");
 
-  // When the user clicks on a movie card, open the modal
-  $(document).on("click", ".movie-card", function () {
-    var movieTitle = $(this).find(".movie-title").text();
-    var movieYear = $(this).find(".movie-year").text();
+// When the user clicks on a movie card, open the modal and fetch the movie details
+$(document).on("click", ".movie-card", function () {
+  var movieId = $(this).data("movie-id");
+  var moviePoster = $(this).find("img").attr("src"); // Corrected selector to find the movie image
+
+  // Make AJAX call to fetch the movie details
+  $.ajax({
+    url: "https://api.themoviedb.org/3/movie/" + movieId,
+    method: "GET",
+    data: {
+      api_key: "eaea323db76508a71d993148477ad36f"
+    }
+  }).then(function (response) {
+    var movieTitle = response.title;
+    var movieOverview = response.overview;
 
     // Set the title and content of the modal
     $("#modalTitle").text(movieTitle);
-    $("#modalContent").text("Year: " + movieYear);
+    $("#modalContent").text("Overview: " + movieOverview);
+
+    // Set the poster path for the modal
+    $("#modalPoster").attr("src", moviePoster);
 
     // Open the modal
-    modal.css("display", "block");
+    $("#myModal").css("display", "block");
   });
+});
 
-  // When the user clicks on <span> (x), close the modal
+  //When the user clicks on <span> (x), close the modal
   span.click(function () {
     modal.css("display", "none");
   });
 
-  // When the user clicks anywhere outside of the modal, close it
+  //When the user clicks anywhere outside of the modal, close it
   $(window).click(function (event) {
     if (event.target == modal[0]) {
       modal.css("display", "none");

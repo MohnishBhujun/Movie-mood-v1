@@ -9,7 +9,6 @@
   </head>
   <body>
     <div class="top"></div>
-    
     <!-- Logo -->
     <div class="logo-container">
       <img
@@ -19,7 +18,6 @@
         height="100px"
       />
     </div>
-
     <div class="content-container">
       <section id="selection-bar">
         <!-- This is where all movie selection criteria go. -->
@@ -72,7 +70,7 @@
             >
               <!-- <label for="rating">Rating:</label>
             <select name="rating" id="rating"> -->
-              <option value="NaN" disabled selected>Rating</option>
+              <option value="" disabled selected>Rating</option>
               <option value="0-25">0-25</option>
               <option value="26-50">26-50</option>
               <option value="51-75">51-75</option>
@@ -102,18 +100,15 @@
         </div>
       </section>
     </div>
-
     <!-- Movie Selection Gallery -->
     <div class="movie-container">
       <!-- This is where the movie cards will go. -->
     </div>
     <!-- End of Movie Selection Gallery -->
-
     <div class="button-group">
       <!-- <button class="randomise">Randomise!</button>
           <button class="rewind">Rewind!</button> -->
     </div>
-
     <div class="center-buttons">
       <button class="randomise">Randomise!</button>
       <button class="rewind">Rewind!</button>
@@ -122,8 +117,15 @@
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h2 id="modalTitle"></h2>
-        <p id="modalContent"></p>
+        <div class="movie-details">
+          <div class="poster-container">
+            <img id="modalPoster" src="" alt="Movie Poster" class="poster">
+          </div>
+          <div class="movie-info">
+            <h2 id="modalTitle"></h2>
+            <p id="modalContent"></p>
+          </div>
+        </div>
       </div>
     </div>
 
