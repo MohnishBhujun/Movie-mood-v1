@@ -79,14 +79,19 @@ function createSearchParameters() {
 
 // Function to create the movie cards
 function getRandomMovies(responseData) {
-  // Pick 6 random movies from the response data
   var randomMovies = [];
-  for (var i = 0; i < 6; i++) {
+  var movieIndices = [];
+
+  while (randomMovies.length < 6) {
     var randomIndex = Math.floor(Math.random() * responseData.length);
-    randomMovies.push(responseData[randomIndex]);
+    
+    // Check if the movie index has already been added
+    if (!movieIndices.includes(randomIndex)) {
+      randomMovies.push(responseData[randomIndex]);
+      movieIndices.push(randomIndex);
+    }
   }
 
-  // console.log(randomMovies);
   return randomMovies;
 }
 
@@ -135,3 +140,40 @@ $(".submit").on("click", function (event) {
   var criterias = createSearchParameters();
   ajaxCall(criterias);
 });
+
+// Function to create the AJAX call
+function ajaxCall(criterias) {
+  const settings = {
+    async: true,
+    crossDomain: true,
+    url: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&release_date.gte=${criterias[3]}&release_date.lte=${criterias[4]}&sort_by=vote_average.desc&vote_average.gte=${criterias[1]}&vote_average.lte=${criterias[2]}&with_genres=${criterias[0]}`,
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWVhMzIzZGI3NjUwOGE3MWQ5OTMxNDg0NzdhZDM2ZiIsInN1YiI6IjY1OTc1OGY4ZWY5ZDcyMWQyZTEyYjVlZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zyau9BDNn_4vkghL57r3ZBpL5ovsUC3SMb7KJKKb3wc",
+    },
+  };
+
+  $.ajax(settings).done(function (response) {
+    let randomMovies = getRandomMovies(response.results);
+    displayMovieCards(randomMovies);
+  });
+}
+
+// Function to create the movie cards
+function getRandomMovies(responseData) {
+  var randomMovies = [];
+  var movieIndices = [];
+
+  while (randomMovies.length < 6) {
+    var randomIndex = Math.floor(Math.random() * responseData.length);
+
+    // Check if the movie index has already been added
+    if (!movieIndices.includes(randomIndex)) {
+      randomMovies.push(responseData[randomIndex]);
+      movieIndices.push(randomIndex);
+    }
+  }
+
+  return randomMovies;
+}
