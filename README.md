@@ -16,54 +16,28 @@
 -----
 ## Project Summary 📋
 * Using all the skills learned over the past six modules, our group has been assigned to create & design a real-world front-end application 
-* The app must use a CSS framework other than Bootstrap and must be interactive, accepting and responding to user input
-* It must use two server-side APIs, be responsive, and use client-side storage in order persistent data 
-* The app can't use alerts, confirms or prompts, and must use modals instead 
+* The app must use a CSS framework other than Bootstrap and must be interactive, accepting, and responding to user input
+* It must use two server-side APIs, be responsive, and use client-side storage to store persistent data 
+* The app can't use alerts, confirms, or prompts, and must use modals instead 
 * Finally, it must be deployed to GitHub Pages
 -----
-# Initial Work & Study 💻  
-* Searched through previous classes and online tutorials on functions, loops, and conditional gates
-* Goal: to understand how functions could be used to call random characters (letters, numbers, symbols) without the application breaking or returning a false value
-* Sample prototype via tutorial which taught me what basic JS structure for a password generator might look like
-* Completed side project prototype
-
-
 # Collaboration Workflow 🦾
-* After reviewing some of my work with my mentor who helped further my understanding, I reworked the JavaScript to “clean it up”
-* Requested information details from Xpert Learning Assistant for assistance on proper syntax and understanding logic behind the code
-* Connected with my colleague Sahil for an all-day study session to test various updates and share ideas
-* Completed 2nd tutoring session requesting additional explanations and details of JavaScript logic and flow
-* Finally, reviewed additional JavaScript course materials and connected a final time with my mentor
+* After deciding what we wanted to focus on, our group started wireframing
+* We created a basic HTML skeleton with some CSS styling that we knew we wanted to use
+* Browsing for suitable APIs, we found two: TMDB, and a secondary API that produced a random movie-related quote
+* Tasks were assigned using Git Hub Projects and recorded as we went
+* The team worked together throughout class working sessions, and in pairs throughout the week
 -----
-## Summary of Changes 📝  
-JavaScript
-* Started by laying out a series of constants to define character sets to select and use in the final password
-* Added first prompt and defined ‘length’ as a constant in the function body the ‘generatePassword’ function
-* This function then “builds” the ‘characters’ string based on user input (boolean)
-* After researching ‘isNaN’ I added error messaging to halt ‘generatePassword’ if no inputs are selected by the user
-* I appended window.confirm() to a new set of constants that work as alerts. User inputs function as either ‘true’ (OK button) or ‘false’ (Cancel button) — if all inputs are false, or are too short or too long, the error alert displays and returns the user to the start of the process
-* Then I used var to make characters into an empty string (or object) and added a series of loops defined by the constants using a boolean (ie true/false = okay/cancel) to populate it
-* If all values are false (ie. user selects ‘cancel’ each time) the last loop returns them to the start
-* The initialization of the let generatedPassword line creates a string where characters of the password can be stored as the ‘for’ loop progresses X times. I researched random index generation techniques to learn Math.random() multiplied by the length of the string and then multiplied by ‘characters’ length
-* Adding Math.floor rounds down to make a whole number (instead of 0-1 expressed as decimal places) * The last step concatenates password characters one by one using a ‘+=‘ operator
-* Finally, the function writePassword() calls the HTML id and displays the stored password on click using an EventListener method
-
-Other
-* Added comments to HTML for clean sections and easier reference to functions in JS
-* Added header styling: increased size, added an animated glowing feature on main header
-* Added colour hover effects to the ‘Generate Password’ button
-* Changed background colour for greater visibility/impact
-* Added CSS comments for easy reference when changing styling
-* Used Chrome extension WAVE to test final page for accessibility.
+## Breakdown of Tasks 📝  
 
 -----
 ## Screenshots 📸
-* ![Happy Mood Recommendations](images/example-1.png)
-* ![Scared Mood Recommendations](images/example-2.png)
-* <a href="https://streamable.com/jc3307">Short Screen Recording</a>
+* <a href="https://github.com/MohnishBhujun/Collab-project-demo/blob/main/assets/images/example-1.png">Happy Mood Recommendation</a>
+* <a href="https://github.com/MohnishBhujun/Collab-project-demo/blob/main/assets/images/example-2.png">Scared Mood Recommendation</a>
+* <a href="https://streamable.com/gtunz3">Short Screen Recording</a>
 
 -----
-## About Me
+## About Us
 <h3 align="left">Hey there! We're Group One 👋 </h3>
 
 * 🔭 I’m currently working on occult projects, SMBs & personal pages
