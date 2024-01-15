@@ -28,8 +28,14 @@
 * Tasks were assigned using Git Hub Projects and recorded as we went
 * The team worked together throughout class working sessions, and in pairs throughout the week
 -----
-## Breakdown of Tasks 📝  
-
+## Breakdown of Tasks 📝
+* We used the Git Hub project collaboration demo from our final class of the year for our project, which was set up by Mohnish
+* Dan built the original wireframe concept once the group confirmed the direction we wanted to proceed in
+* Coding tasks were assigned by language proficiency and supported by each group member
+* Brock wrote the majority of our JavaScript
+* Mohnish wrote our HTML skeleton and assisted with both CSS and JavaScript
+* Dan wrote the majority of our CSS and some HTML
+* Saran worked through Tailwind styles and additional APIs 
 -----
 ## Screenshots 📸
 * <a href="https://github.com/MohnishBhujun/Collab-project-demo/blob/main/assets/images/example-1.png">Happy Mood Recommendation</a>
@@ -39,10 +45,6 @@
 -----
 ## About Us
 <h3 align="left">Hey there! We're Group One 👋 </h3>
-
-* 🔭 I’m currently working on occult projects, SMBs & personal pages
-* 🌱 I’m currently learning HTML5, CSS, & JavaScript
-* 📫 Email me **dcampo85@gmail.com**
 
 <h6 align="left">Connect with Us!</h6>
 <p align="left">
