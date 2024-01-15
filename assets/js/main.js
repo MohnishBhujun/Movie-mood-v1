@@ -63,16 +63,15 @@ function createSearchParameters() {
   const rating = $("#rating").val();
   // Split rating into an array
   const ratingArray = rating.split("-");
-  // Get the minimum rating
-  const minRating = ratingArray[0];
-  // Get the maximum rating
-  const maxRating = ratingArray[1];
+  // Get min rating and max rating from the rating array and move the decimal to the left
+  const minRating = ratingArray[0] / 10;
+  const maxRating = ratingArray[1] / 10;
   // Get start year and end year from text boxes
   const startYear = $("#startYear").val();
   const endYear = $("#endYear").val();
 
   var criteriaArray = [genreString, minRating, maxRating, startYear, endYear];
-  // console.log(criteriaArray);
+  console.log(minRating, maxRating);
 
   return criteriaArray;
 }
@@ -110,28 +109,51 @@ function displayMovieCards(randomMovies) {
   });
 }
 
-// Function to create the AJAX call
-function ajaxCall(criterias) {
-  const settings = {
-    async: true,
-    crossDomain: true,
-    url: `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&release_date.gte=${criterias[3]}&release_date.lte=${criterias[4]}&sort_by=vote_average.desc&vote_average.gte=${criterias[1]}&vote_average.lte=${criterias[2]}&with_genres=${criterias[0]}`,
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWVhMzIzZGI3NjUwOGE3MWQ5OTMxNDg0NzdhZDM2ZiIsInN1YiI6IjY1OTc1OGY4ZWY5ZDcyMWQyZTEyYjVlZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zyau9BDNn_4vkghL57r3ZBpL5ovsUC3SMb7KJKKb3wc",
-    },
-  };
+// Function to make AJAX call
+function getMovies() {
+  // Create search parameters
+  const searchParameters = createSearchParameters();
+  // console.log(searchParameters);
 
-  $.ajax(settings).done(function (response) {
-    let randomMovies = getRandomMovies(response.results);
+  // Create the query URL
+  const queryURL =
+    "https://api.themoviedb.org/3/discover/movie?api_key=" +
+    apiKey +
+    "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" +
+    searchParameters[0] +
+    "&vote_average.gte=" +
+    searchParameters[1] +
+    "&vote_average.lte=" +
+    searchParameters[2] +
+    "&primary_release_date.gte=" +
+    searchParameters[3] +
+    "-01-01&primary_release_date.lte=" +
+    searchParameters[4] +
+    "-12-31";
+
+  // Make AJAX call
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  }).then(function (response) {
+    // console.log(response);
+    // Get the response data
+    const responseData = response.results;
+    // console.log(responseData);
+
+    // Get 6 random movies from the response data
+    const randomMovies = getRandomMovies(responseData);
+    // console.log(randomMovies);
+
+    // Display the movie cards
     displayMovieCards(randomMovies);
   });
 }
 
+// Event Listeners
+// Event listener for the submit button
 $(".submit").on("click", function (event) {
   event.preventDefault();
-  var criterias = createSearchParameters();
-  ajaxCall(criterias);
+  console.log("Clicked");
+  getMovies();
 });
