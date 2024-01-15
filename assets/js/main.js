@@ -71,10 +71,44 @@ function createSearchParameters() {
   const endYear = $("#endYear").val();
 
   var criteriaArray = [genreString, minRating, maxRating, startYear, endYear];
-  console.log(minRating, maxRating);
+  // console.log(minRating, maxRating);
 
   return criteriaArray;
 }
+
+// Function to create random search parameters for AJAX call
+function createRandomSearchParameters() {
+  // Get a random mood from the mood object
+  const mood = Object.keys(moodsToGenres)[
+    Math.floor(Math.random() * Object.keys(moodsToGenres).length)
+  ];
+  // Get the genre array from the mood object
+  const genreArray = moodsToGenres[mood];
+  // Join the genre array into a string
+  const genreString = genreArray.join("%7C");
+  // Get a random rating option from the rating select and check if it is not NaN
+  var rating = $("#rating option")
+    .eq(Math.floor(Math.random() * $("#rating option").length))
+    .val();
+  if (rating == "NaN") {
+    rating = "51-75";
+  }
+  // Split rating into an array
+  const ratingArray = rating.split("-");
+  // Get min rating and max rating from the rating array and move the decimal to the left
+  const minRating = ratingArray[0] / 10;
+  const maxRating = ratingArray[1] / 10;
+  // Get a random start year between 1900 and 2023
+  const startYear = Math.floor(Math.random() * (2023 - 1900) + 1900);
+  // Get a random end year that starts between startYear and 2023
+  const endYear = Math.floor(Math.random() * (2023 - startYear) + startYear);
+
+  // console.log(mood, genreString, minRating, maxRating, startYear, endYear);
+  var criteriaArray = [genreString, minRating, maxRating, startYear, endYear];
+
+  return criteriaArray;
+}
+  
 
 // Function to create the movie cards
 function getRandomMovies(responseData) {
@@ -84,7 +118,7 @@ function getRandomMovies(responseData) {
   while (randomMovies.length < 6) {
     var randomIndex = Math.floor(Math.random() * responseData.length);
     
-    //Checking if the movie index has already been added so that there are no duplicate movies
+    // Check if the movie index has already been added
     if (!movieIndices.includes(randomIndex)) {
       randomMovies.push(responseData[randomIndex]);
       movieIndices.push(randomIndex);
@@ -97,28 +131,32 @@ function getRandomMovies(responseData) {
 // Function to display the movie cards
 function displayMovieCards(randomMovies) {
   $('.movie-container').empty();
-
-  randomMovies.forEach(function (movie) {
-    var movieCard = $('<div>').addClass('relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md movie-card').data("movie-id", movie.id);
+  randomMovies.forEach(function(movie) {
+    var movieCard = $('<div>').addClass('relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md movie-card');
     var movieImageContainer = $('<div>').addClass('relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg');
     var movieImage = $('<img>').attr('src', 'https://image.tmdb.org/t/p/w500' + movie.poster_path).attr('alt', 'movie-poster');
     var movieInfoContainer = $('<div>').addClass('p-6 text-center');
-    var movieTitle = $('<h4>').addClass('mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased movie-title').text(movie.title);
-    var movieYear = $('<p>').addClass('block bg-gradient-to-r from-pink-600 to-pink-400 bg-clip-text font-sans text-base font-medium leading-relaxed text-transparent antialiased movie-year').text(movie.release_date.substring(0, 4));
+    var movieTitle = $('<h4>').addClass('mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased').text(movie.title);
+    var movieYear = $('<p>').addClass('block bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-text font-sans text-base font-medium leading-relaxed text-transparent antialiased').text(movie.release_date.substring(0, 4));
+    var movieCard = $('<div>').addClass('relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md movie-card');
 
     movieImageContainer.append(movieImage);
     movieInfoContainer.append(movieTitle, movieYear);
     movieCard.append(movieImageContainer, movieInfoContainer);
 
+    // Append the movie card to a container element on your page
     $('.movie-container').append(movieCard);
   });
 }
 
 // Function to make AJAX call
-function getMovies() {
+function getMovies(random) {
   // Create search parameters
-  const searchParameters = createSearchParameters();
-  // console.log(searchParameters);
+  if (random = true) {
+    var searchParameters = createRandomSearchParameters();
+  } else {
+    var searchParameters = createSearchParameters();
+  }
 
   // Create the query URL
   const queryURL =
@@ -141,69 +179,58 @@ function getMovies() {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    // console.log(response);
     // Get the response data
     const responseData = response.results;
-    // console.log(responseData);
 
     // Get 6 random movies from the response data
     const randomMovies = getRandomMovies(responseData);
-    // console.log(randomMovies);
 
     // Display the movie cards
     displayMovieCards(randomMovies);
   });
 }
 
-//Event Listeners
-//Event listener for the submit button
+// Event Listeners
+// Event listener for the submit button
 $(".submit").on("click", function (event) {
   event.preventDefault();
   console.log("Clicked");
-  getMovies();
+  getMovies(false);
+});
+
+// Event listener for the random button
+$(".randomise").on("click", function (event) {
+  event.preventDefault();
+  console.log("Clicked");
+  getMovies(true);
 });
 
 $(document).ready(function () {
-  //Getting the modal element
+  // Get the modal element
   var modal = $("#myModal");
 
-  //Getting the <span> element that closes the modal
+  // Get the <span> element that closes the modal
   var span = $(".close");
 
-// When the user clicks on a movie card, open the modal and fetch the movie details
-$(document).on("click", ".movie-card", function () {
-  var movieId = $(this).data("movie-id");
-  var moviePoster = $(this).find("img").attr("src"); // Corrected selector to find the movie image
-
-  // Make AJAX call to fetch the movie details
-  $.ajax({
-    url: "https://api.themoviedb.org/3/movie/" + movieId,
-    method: "GET",
-    data: {
-      api_key: "eaea323db76508a71d993148477ad36f"
-    }
-  }).then(function (response) {
-    var movieTitle = response.title;
-    var movieOverview = response.overview;
+  // When the user clicks on a movie card, open the modal
+  $(document).on("click", ".movie-card", function () {
+    var movieTitle = $(this).find(".movie-title").text();
+    var movieYear = $(this).find(".movie-year").text();
 
     // Set the title and content of the modal
     $("#modalTitle").text(movieTitle);
-    $("#modalContent").text("Overview: " + movieOverview);
-
-    // Set the poster path for the modal
-    $("#modalPoster").attr("src", moviePoster);
+    $("#modalContent").text("Year: " + movieYear);
 
     // Open the modal
-    $("#myModal").css("display", "block");
+    modal.css("display", "block");
   });
-});
 
-  //When the user clicks on <span> (x), close the modal
+  // When the user clicks on <span> (x), close the modal
   span.click(function () {
     modal.css("display", "none");
   });
 
-  //When the user clicks anywhere outside of the modal, close it
+  // When the user clicks anywhere outside of the modal, close it
   $(window).click(function (event) {
     if (event.target == modal[0]) {
       modal.css("display", "none");
