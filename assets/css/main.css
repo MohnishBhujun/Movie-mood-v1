@@ -60,6 +60,8 @@
   .submit {
     margin-top: 10px;
     height: 40px;
+    text-align: center;
+    justify-content: center;
     flex: 1; /* Added flex property */
   }
   
