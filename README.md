@@ -8,6 +8,7 @@
 </p>
 
 #### _Links_
+* <a href="https://mohnishbhujun.github.io/Collab-project-demo/">Movie Mood Deployment Link</a>
 * <a href="https://github.com/MohnishBhujun/Collab-project-demo/blob/main/index.html">HTML</a>
 * <a href="https://github.com/MohnishBhujun/Collab-project-demo/blob/main/assets/css/main.css">CSS</a>
 * <a href="https://github.com/MohnishBhujun/Collab-project-demo/blob/main/assets/js/main.js">JS</a>
@@ -48,7 +49,8 @@
 
 <h6 align="left">Connect with Us!</h6>
 <p align="left">
-<a href="https://twitter.com/danjohnwrites" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="danjohnwrites" height="30" width="40" /></a>
+<a href="https://linkedin.com/in/blockdoyle" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="blockdoyle" height="30" width="40" />Brock's LinkedIn Page</a>  
+<a href="https://linkedin.com/in/dan-campo" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="dan-campo" height="30" width="40" />Dan's LinkedIn Page</a>
 <a href="https://instagram.com/mbkbhd" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="direblackandwhite" height="30" width="40"/>Mohnish on Instagram</a>
 <a href="https://instagram.com/direpike" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="direblackandwhite" height="30" width="40" />Dan on Instagram</a>
 </p>
