@@ -209,6 +209,8 @@ $(".rewind").on("click", function (event) {
   $('.movie-container').empty();
 });
 
+// The below code was all done by Mohnish Bhujun
+// I've only re-added it here because I had accidentally deleted it. The commit SHA is: e69a02dcf06528b57ee746233e0bb942ff03376c
 $(document).ready(function () {
   //Getting the modal element
   var modal = $("#myModal");
