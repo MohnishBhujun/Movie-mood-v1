@@ -282,3 +282,33 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  .modal-content {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .poster-container {
+    flex: 0 0 auto;
+    margin-right: 20px;
+  }
+  
+  .poster {
+    width: 200px;
+    height: auto;
+  }
+  
+  .movie-info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #modalTitle {
+    margin-top: 0;
+  }
+  
+  #modalContent {
+    margin-bottom: 0;
+  }
