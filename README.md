@@ -1,4 +1,4 @@
-# Group Project 1: Interactive Front-End App // Movie Mood
+# Interactive Front-End App // Movie Mood
 
 ##### _Languages & Tools Used_ 🛠
 <p align="left">
@@ -49,6 +49,6 @@
 <h6 align="left">Connect with Us!</h6>
 <p align="left">
 <a href="https://twitter.com/danjohnwrites" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="danjohnwrites" height="30" width="40" /></a>
-<a href="https://instagram.com/direblackandwhite" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="direblackandwhite" height="30" width="40" /></a>
-<a href="https://instagram.com/direpike" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="direblackandwhite" height="30" width="40" /></a>
+<a href="https://instagram.com/mbkbhd" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="direblackandwhite" height="30" width="40"/>Mohnish on Instagram</a>
+<a href="https://instagram.com/direpike" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="direblackandwhite" height="30" width="40" />Dan on Instagram</a>
 </p>
