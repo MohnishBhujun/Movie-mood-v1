@@ -205,6 +205,11 @@ $(".randomise").on("click", function (event) {
   getMovies("random");
 });
 
+$(".rewind").on("click", function (event) {
+  event.preventDefault();
+  $('.movie-container').empty();
+});
+
 $(document).ready(function () {
   // Get the modal element
   var modal = $("#myModal");
