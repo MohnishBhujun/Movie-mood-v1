@@ -105,13 +105,52 @@ function displayMovieCards(randomMovies) {
     var movieTitle = $('<h4>').addClass('mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased').text(movie.title);
     var movieYear = $('<p>').addClass('block bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-text font-sans text-base font-medium leading-relaxed text-transparent antialiased').text(movie.release_date.substring(0, 4));
     var movieCard = $('<div>').addClass('relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md movie-card');
+    var movieId = $('<p>').addClass('hidden').text(movie.id); // This will be used for the modal
 
     movieImageContainer.append(movieImage);
-    movieInfoContainer.append(movieTitle, movieYear);
+    movieInfoContainer.append(movieTitle, movieYear, movieId);
     movieCard.append(movieImageContainer, movieInfoContainer);
 
     // Append the movie card to a container element on your page
     $('.movie-container').append(movieCard);
+  });
+}
+
+// Get movie details for modal
+function getMovieDetails(movieId) {
+  const settings = {
+    async: true,
+    crossDomain: true,
+    url: `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWVhMzIzZGI3NjUwOGE3MWQ5OTMxNDg0NzdhZDM2ZiIsInN1YiI6IjY1OTc1OGY4ZWY5ZDcyMWQyZTEyYjVlZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zyau9BDNn_4vkghL57r3ZBpL5ovsUC3SMb7KJKKb3wc'
+    }
+  };
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  // Get the movie title
+  const movieTitle = response.original_title;
+
+  // Get the movie poster
+  const moviePoster = response.poster_path;
+
+  // Get the movie overview
+  const movieOverview = response.overview;
+
+  // Get the movie release date
+  const movieReleaseDate = response.release_date;
+
+  // Get the movie genres
+  const movieGenres = response.genres;
+
+  // Return the movie details
+  let movieDetails = [movieTitle, moviePoster, movieOverview, movieReleaseDate, movieGenres];
+  
+  console.log(movieDetails);
+  return movieDetails;
   });
 }
 
@@ -173,12 +212,11 @@ $(document).ready(function () {
 
   // When the user clicks on a movie card, open the modal
   $(document).on("click", ".movie-card", function () {
-    var movieTitle = $(this).find(".movie-title").text();
-    var movieYear = $(this).find(".movie-year").text();
-
-    // Set the title and content of the modal
-    $("#modalTitle").text(movieTitle);
-    $("#modalContent").text("Year: " + movieYear);
+    movieValue = $(this).find(".hidden").text();
+    getMovieDetails(movieValue);
+    
+    // Create the query URL
+    
 
     // Open the modal
     modal.css("display", "block");
