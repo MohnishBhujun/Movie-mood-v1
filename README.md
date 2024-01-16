@@ -36,7 +36,10 @@
 * Brock wrote the majority of our JavaScript
 * Mohnish wrote our HTML skeleton and assisted with both CSS and JavaScript
 * Dan wrote the majority of our CSS and some HTML
-* Saran worked through Tailwind styles and additional APIs 
+* Saran worked through Tailwind styles and additional APIs
+-----
+## Credits
+* Thanks to Material Tailwind for providing the style we used for our [Movie Cards](https://tailwindcomponents.com/component/tailwind-css-profile-card-by-material-tailwind)
 -----
 ## Screenshots 📸
 * <a href="https://github.com/MohnishBhujun/Collab-project-demo/blob/main/assets/images/example-1.png">Happy Mood Recommendation</a>
