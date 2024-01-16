@@ -38,7 +38,7 @@
     padding: 20px;
     margin: 40px;
     border-radius: 15px;
-    box-shadow: 0 9px #306957;
+    box-shadow: 0 9px rebeccapurple;
     max-height: 80vh;
     overflow-y: auto;
   }
@@ -87,7 +87,7 @@
     background-color: #d85368;
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #306957;
+    box-shadow: 0 9px rebeccapurple;
   }
   
   .submit:hover,
@@ -100,7 +100,7 @@
   .randomise:active,
   .rewind:active {
     background-color: #d51330;
-    box-shadow: 0 5px #235445;
+    box-shadow: 0 5px rgb(77, 23, 130);
     transform: translateY(4px);
   }
 
@@ -130,7 +130,7 @@
     background-color: #d85368;
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #306957;
+    box-shadow: 0 9px rebeccapurple;
   }
   
   #quoteButton:hover {
@@ -139,7 +139,7 @@
   
   #quoteButton:active {
     background-color: #d51330;
-    box-shadow: 0 5px #235445;
+    box-shadow: 0 5px rgb(77, 23, 130);;
     transform: translateY(4px);
   }
 
@@ -177,7 +177,7 @@
     margin: 40px;
     background-color: #e1dcbb;
     border-radius: 15px;
-    box-shadow: 0 9px #306957;
+    box-shadow: 0 9px rebeccapurple;
     padding: 20px;
   }
 
@@ -191,7 +191,7 @@
     padding: 20px;
     margin: 40px;
     border-radius: 15px;
-    box-shadow: 0 9px #306957;
+    box-shadow: 0 9px rebeccapurple;
     max-height: 80vh;
     overflow-y: auto;
   }
