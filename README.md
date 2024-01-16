@@ -8,7 +8,7 @@
 </p>
 
 #### _Links_
-* <a href="https://mohnishbhujun.github.io/Collab-project-demo/">Movie Mood Deployment Link</a>
+* <a href="https://mohnishbhujun.github.io/Movie-mood-v1/">Movie Mood Deployment Link</a>
 * <a href="https://github.com/MohnishBhujun/Collab-project-demo/blob/main/index.html">HTML</a>
 * <a href="https://github.com/MohnishBhujun/Collab-project-demo/blob/main/assets/css/main.css">CSS</a>
 * <a href="https://github.com/MohnishBhujun/Collab-project-demo/blob/main/assets/js/main.js">JS</a>
